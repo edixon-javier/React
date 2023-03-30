@@ -1,10 +1,10 @@
 {
   "files": {
-    "main.css": "/edixon-javier/React.git/static/css/main.13aceaec.css",
-    "main.js": "/edixon-javier/React.git/static/js/main.d6af1a03.js",
-    "index.html": "/edixon-javier/React.git/index.html",
-    "main.13aceaec.css.map": "/edixon-javier/React.git/static/css/main.13aceaec.css.map",
-    "main.d6af1a03.js.map": "/edixon-javier/React.git/static/js/main.d6af1a03.js.map"
+    "main.css": "/React/static/css/main.13aceaec.css",
+    "main.js": "/React/static/js/main.d6af1a03.js",
+    "index.html": "/React/index.html",
+    "main.13aceaec.css.map": "/React/static/css/main.13aceaec.css.map",
+    "main.d6af1a03.js.map": "/React/static/js/main.d6af1a03.js.map"
   },
   "entrypoints": [
     "static/css/main.13aceaec.css",
