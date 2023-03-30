@@ -1,0 +1,16 @@
+div {
+    text-align: center
+}
+
+.Sub-title{
+    font-size: 22px;
+    text-align: center;
+    margin: 0;
+    padding-bottom: 5px;
+}
+
+.content {
+    font-size: 15px;
+    padding-bottom: 25px;
+    color: rgb(67, 180, 175);
+}
