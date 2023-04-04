@@ -1,50 +1,45 @@
 import React from "react";
-import { TodoContext } from "../TodoContext";
-import './TodoForm.css'
+import "./TodoForm.css";
 
-function TodoForm(){
+function TodoForm({ addTodo, setOpenModal }) {
+  const [newTodoValue, setNewTodoValue] = React.useState("");
 
-    const [newTodoValue, setNewTodoValue] = React.useState('');
+  const onChange = (event) => {
+    setNewTodoValue(event.target.value);
+  };
 
-    const { addTodo, setOpenModal } = React.useContext(TodoContext)
+  const onCancel = () => {
+    setOpenModal(false);
+  };
 
-    const onChange = (event) => {
-        setNewTodoValue(event.target.value);
-    }
+  const onSubmit = (event) => {
+    event.preventDefault();
+    addTodo(newTodoValue);
+    setOpenModal(false);
+  };
 
-    const onCancel = () => {
-        setOpenModal(false);
-    }
-
-
-    const onSubmit = (event) => {
-        event.preventDefault();
-        addTodo(newTodoValue);
-        setOpenModal(false);
-    }
-
-
-    return (
-        <form onSubmit={onSubmit}>
-            <label>Agregar nueva tarea a la lista</label>
-            <textarea
-            value={newTodoValue}
-            onChange={onChange}
-            placeholder="Escribe tu nueva tarea."/>
-            <div className="TodoForm-buttonContainer">
-                <button 
-                className="TodoForm-button TodoForm-button--cancel"
-                onClick={onCancel} type="button">
-                    ❌
-                </button>
-                <button 
-                 className="TodoForm-button TodoForm-button--add"
-                type="submit">
-                    ✅
-                </button>
-            </div>
-        </form>
-    )
+  return (
+    <form onSubmit={onSubmit}>
+      <label>Agregar nueva tarea a la lista</label>
+      <textarea
+        value={newTodoValue}
+        onChange={onChange}
+        placeholder="Escribe tu nueva tarea."
+      />
+      <div className="TodoForm-buttonContainer">
+        <button
+          className="TodoForm-button TodoForm-button--cancel"
+          onClick={onCancel}
+          type="button"
+        >
+          ❌
+        </button>
+        <button className="TodoForm-button TodoForm-button--add" type="submit">
+          ✅
+        </button>
+      </div>
+    </form>
+  );
 }
 
-export { TodoForm }
+export { TodoForm };

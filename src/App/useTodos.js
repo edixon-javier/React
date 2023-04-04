@@ -1,8 +1,7 @@
 import React from "react";
 import { useLocalStorage } from "./userLocalStorage";
 
-const TodoContext = React.createContext();
-function TodoProvider(props) {
+function useTodos() {
   const {
     item: todos,
     saveItem: saveTodos,
@@ -47,12 +46,11 @@ function TodoProvider(props) {
     saveTodos(newTodos);
   };
 
-
   const addTodo = (text) => {
     const newTodos = [...todos];
     newTodos.push({
       complete: false,
-      text
+      text,
     });
     saveTodos(newTodos);
   };
@@ -62,26 +60,20 @@ function TodoProvider(props) {
   // }, [totalTodos])
   // //? Si o dejas vacio se renderiza una sola vez, pero si colocas algo dentro se ejecuta cuando este cambia
 
-  return (
-    <TodoContext.Provider
-      value={{
-        error,
-        loading,
-        completedTodos,
-        totalTodos,
-        searchValue,
-        setSearchValue,
-        searchedtodos,
-        completeTodo,
-        deleteTodo,
-        openModal,
-        setOpenModal,
-        addTodo
-      }}
-    >
-      {props.children}
-    </TodoContext.Provider>
-  );
+  return {
+    error,
+    loading,
+    completedTodos,
+    totalTodos,
+    searchValue,
+    setSearchValue,
+    searchedtodos,
+    completeTodo,
+    deleteTodo,
+    openModal,
+    setOpenModal,
+    addTodo,
+  };
 }
 
-export { TodoContext, TodoProvider}
+export { useTodos };
