@@ -4,7 +4,7 @@
     border: 1px solid #202329;
     margin: 2px 24px;
     height: 62px;
-    width: calc(100% - 62px);
+    width: calc(50% - 101px);
     font-size: 25px;
     text-align: center;
     font-family: "Montserrat";
@@ -22,3 +22,8 @@
 .TodoSearch:focus {
   outline-color: #2dc7ba;
 }
+
+.TodoSearch:disabled {
+  opacity: 25%;
+}
+

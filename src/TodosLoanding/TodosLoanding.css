@@ -1,12 +1,9 @@
 .TodoItem-loading {
-  background-color: #fafafa;
+  padding-top: 30px;
   position: relative;
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-top: 24px;
-  box-shadow: 0px 5px 50px rgba(32, 35, 41, 0.15);
-  color: #333;
   min-height: 4.5rem;
 }
 
@@ -21,7 +18,7 @@
   width: 20px;
   height: 20px;
   border-radius: 50%;
-  background: #bec3c5;
+  background: #2dc1c1;
 }
 
 .LoaderBalls__item:nth-child(2) {
@@ -41,7 +38,7 @@
   100% {
     opacity: 0;
   }
-  60% {
+  80% {
     opacity: 1;
   }
 }

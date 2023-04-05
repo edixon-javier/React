@@ -14,3 +14,7 @@ div {
     padding-bottom: 18px;
     color: rgb(67, 180, 175);
 }
+
+.TodoCounter--loading {
+    opacity: 50%;
+}
