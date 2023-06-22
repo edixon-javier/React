@@ -15,6 +15,7 @@
   font-size: 18px;
   line-height: 24px;
   font-weight: 400;
+  cursor: pointer;
 }
 
 .TodoItem-p--complete {
@@ -48,11 +49,12 @@
   right: 10px;
   transform: rotate(0);
   transition: .3s ease;
+  color: red;
+  font-size: 35px;
 }
 
 .Icon-delete:hover {
-  color: red;
-  transform: rotate(60deg);
+  transform: rotate(30deg);
 }
 
 

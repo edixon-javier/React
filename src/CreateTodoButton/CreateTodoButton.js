@@ -1,11 +1,16 @@
 import React from "react";
 import './CreateTodoButton.css'
+import { BsPlusLg } from "react-icons/bs";
 
-// const otrovalor  () = > {
-
-// }
 function CreateTodoButton() {
-  return <button className="CreateTodoButton" onClick={(event) => console.log("hola", event)}>+</button>;
+  return (
+    <button
+      className="CreateTodoButton"
+      onClick={(event) => console.log("hola", event)}
+    >
+      <BsPlusLg />
+    </button>
+  );
 }
 
 export { CreateTodoButton };

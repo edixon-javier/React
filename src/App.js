@@ -13,16 +13,40 @@ const defaultTodos = [
   { text: "Usar estados", completed: false },
 ];
 
+
+// localStorage.setItem('TODOS_v1', defaultTodos);
+// localStorage.removeItem('TODO_v1');
+
 function App() {
+  const lucionado = localStorage.getItem('TODOS_V1');
+  let parsedTodos = JSON.parse(localStorageTodos);
+
   const [searchValue, searchValueState] = React.useState("");
-  const [todos, setTodos] = React.useState(defaultTodos);
+  const [todos, setTodos] = React.useState(parsedTodos);
 
   const searchedTodo = todos.filter((todo) => {
-    return todo.text.toLocaleLowerCase().includes(searchValue.toLocaleLowerCase());
+    const todoText = todo.text.toLocaleLowerCase();
+    const searchText = searchValue.toLocaleLowerCase();
+    return todoText.includes(searchText);
   });
+
+  const  completeTodo = (text) => {
+    const newTodos = [...todos];
+    const todoIndex = newTodos.findIndex((todo) => todo.text === text);
+    newTodos[todoIndex].completed = true;
+    setTodos(newTodos);
+  }
+
+  const DeleteTodo = (text) => {
+    const newTodos = [...todos];
+    const todoIndex = newTodos.findIndex((todo) => todo.text === text);
+    newTodos.splice(todoIndex, 1);
+    setTodos(newTodos);
+  };
 
   const completedTodos = todos.filter((todo) => !!todo.completed).length;
   const totalTodos = todos.length;
+
   return (
     <>
       <TodoCounter completed={completedTodos} total={totalTodos} />
@@ -32,7 +56,13 @@ function App() {
       />
       <TodoList>
         {searchedTodo.map((todo, index) => (
-          <TodoItem key={index} text={todo.text} completed={todo.completed} />
+          <TodoItem
+            key={index}
+            text={todo.text}
+            completed={todo.completed}
+            onComplete={() => completeTodo(todo.text)}
+            onDelete={()=>DeleteTodo(todo.text)}
+          />
         ))}
       </TodoList>
       <CreateTodoButton />
