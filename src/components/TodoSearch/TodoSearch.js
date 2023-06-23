@@ -1,9 +1,10 @@
 import React from "react";
-import './TodoSearch.css';
+import "./TodoSearch.css";
+import { TodoContext } from "../../TodoContext/TodoContext";
 
-function TodoSearch({searchValue,
-searchValueState}) {
- 
+function TodoSearch() {
+  const { searchValue, searchValueState } = React.useContext(TodoContext);
+
   return (
     <input
       placeholder="Buscar Tarea"

@@ -7,27 +7,27 @@ import { CreateTodoButton } from "../components/CreateTodoButton/CreateTodoButto
 import TodoLoading from "../components/TodoLoading/TodoLoading";
 import TodoError from "../components/TodoError/TodoError";
 import EmpyTodo from "../components/EmpyTodo.js/EmpyTodo";
+import { TodoContext } from "../TodoContext/TodoContext";
+import { Modal} from '../Modal/Modal';
 
-function AppUi({
-  completedTodos,
-  totalTodos,
-  searchValue,
-  searchValueState,
-  searchedTodo,
-  completeTodo,
-  DeleteTodo,
-  loading,
-  error,
-}) {
+function AppUi() {
+  const {
+    loading,
+    error,
+    searchedTodo,
+    completeTodo,
+    DeleteTodo,
+    openModal,
+    // setOpenModal,
+  } = React.useContext(TodoContext);
+
   return (
     <>
-      <TodoCounter completed={completedTodos} total={totalTodos} />
-      <TodoSearch
-        searchValue={searchValue}
-        searchValueState={searchValueState}
-      />
+      <TodoCounter />
+      <TodoSearch />
+
       <TodoList>
-        {loading && <TodoLoading/>}
+        {loading && <TodoLoading />}
         {error && <TodoError />}
         {!loading && searchedTodo.length === 0 && <EmpyTodo />}
         {searchedTodo.map((todo, index) => (
@@ -40,7 +40,9 @@ function AppUi({
           />
         ))}
       </TodoList>
+
       <CreateTodoButton />
+      {openModal && <Modal>Hola mundo</Modal>}
     </>
   );
 }
