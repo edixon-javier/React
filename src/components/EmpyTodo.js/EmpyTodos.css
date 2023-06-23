@@ -1,0 +1,9 @@
+.empty-todos-container {
+  text-align: center;
+  margin-top: 40px;
+}
+
+.empty-todos-container p {
+  font-size: 20px;
+  color: #ffffff;
+}

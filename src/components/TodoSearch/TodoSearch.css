@@ -20,6 +20,6 @@
 }
 
 .TodoSearch:focus {
-  outline-color: #ffffff;
+  outline-color: #3f3c3c;
   box-shadow: 0px 5px 50px rgba(225, 229, 236, 0.25);
 }
