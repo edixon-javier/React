@@ -1,12 +1,16 @@
-import React from "react";
-import './CreateTodoButton.css'
+import React, { useState } from "react";
+import "./CreateTodoButton.css";
 import { BsPlusLg } from "react-icons/bs";
 
-function CreateTodoButton() {
+function CreateTodoButton({ setOpenModal }) {
+
+
   return (
     <button
       className="CreateTodoButton"
-      onClick={(event) => console.log("hola", event)}
+      onClick={() => {
+        setOpenModal((openModal) => !openModal);
+      }}
     >
       <BsPlusLg />
     </button>

@@ -1,0 +1,14 @@
+.modalBackGround {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(32, 35, 41, .8);
+    position: fixed;
+    color: antiquewhite;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+    bottom:0;
+    z-index: 1;
+}
